@@ -1,27 +1,28 @@
-const Part = (props) => {
-  return (
-    <>
-      <p>
-        {props.part1} {props.exercises1}
-      </p>
-      <p>
-        {props.part2} {props.exercises2}
-      </p>
-      <p>
-        {props.part3} {props.exercises3}
-      </p>
-    </>
-  )
-}
 
-const Content = ({part1, exercises1, part2, exercises2, part3, exercises3}) => {
+const Content = ({course}) => {
+  console.log({course})
   return (
     <>
-    <Part part1={part1} exercises1={exercises1}/>
-    <Part part2={part2} exercises2={exercises2}/>
-    <Part part3={part3} exercises3={exercises3}/>
+    <Part course={course}/>
     </>
   );
 };
+
+const Part = ({course}) => {
+  console.log({course});
+    return (
+      <>
+        <p>
+          {course.parts[0].name} {course.parts[0].exercises}
+        </p>
+        <p>
+          {course.parts[1].name} {course.parts[1].exercises}
+        </p>
+        <p>
+          {course.parts[2].name} {course.parts[2].exercises}
+        </p>
+      </>
+    )
+  }
 
 export default Content;
